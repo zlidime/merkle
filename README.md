@@ -19,16 +19,7 @@ A three-layer Delta data lake on Databricks built from `item.csv` and `event.csv
 | 2 `curated` | `curated.event` | 1 row per `event_id` | JSON payload flattened, parameters pivoted into typed columns, **partitioned by `event_year`** |
 | 3 `mart` | `mart.top_item` | 1 row per `item_id` × `view_year` | Total views, `RANK()` within year, most used platform |
 
-## How to run
 
-1. Sign up for **Databricks Free Edition** and import `case_study.ipynb` (Workspace → Import).
-2. Attach it to serverless compute and choose **Run all**.
-3. The notebook downloads both files from the public S3 bucket into a Unity Catalog volume. If outbound HTTP is
-   blocked in your workspace, upload the two CSVs to `workspace.raw.landing` through the Catalog UI and skip the
-   download cell.
-
-The notebook ends with assertions (row-count reconciliation, key uniqueness, mart grain, views reconciliation,
-rank sanity). A successful run prints `All validation checks passed.`
 
 ## Key assumptions
 
