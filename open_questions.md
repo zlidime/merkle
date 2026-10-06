@@ -56,7 +56,9 @@ No new data storage; tables stay in Delta in the same Unity Catalog.
 ## 3. What would dbt-core bring? Upsides and downsides
 
 **Upsides**
-- Lineage and dependency management from `ref()`, with generated documentation.
+- Dependency management from `ref()`: build order, selective runs (`--select model+`) and slim CI. Unity Catalog
+  already provides runtime lineage, so dbt's gain is orchestration of the graph, not visibility; `persist_docs`
+  pushes dbt descriptions into Unity Catalog.
 - Tests defined next to the models and run on every build, replacing the hand-written validation cell.
 - Environments (dev / CI / prod) from the same code via targets.
 - Incremental models (`merge`) and snapshots (SCD2) with little code, which covers most of question 1.
