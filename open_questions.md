@@ -20,6 +20,8 @@ transformations and validations are Spark SQL.
   masking of `user_id` where not needed, retention policy.
 - **Table maintenance:** `OPTIMIZE` / `VACUUM` or predictive optimisation; liquid clustering on
   `event_date, item_id` once volumes grow.
+- **Cost control:** job compute or serverless instead of all-purpose clusters, auto-termination, cluster policies,
+  cost tags per pipeline, and incremental processing so each run pays only for new data.
 
 ## 2. If the solution were implemented in dbt-core, how would the architecture change? Would other cloud resources be needed?
 
