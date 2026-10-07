@@ -58,7 +58,6 @@ No new data storage; tables stay in Delta in the same Unity Catalog.
 ## 3. What would dbt-core bring? Upsides and downsides
 
 **Upsides**
-
 - Tests defined next to the models and run on every build, replacing the hand-written validation cell.
 - Environments (dev / CI / prod) from the same code via targets.
 - Incremental models (`merge`) and snapshots (SCD2) with little code, which covers most of question 1.
